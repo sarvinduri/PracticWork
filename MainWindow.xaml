@@ -1,0 +1,29 @@
+﻿<Window x:Class="Глазкова_Труфанова.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Глазкова_Труфанова"
+        mc:Ignorable="d"
+        Title="Автосервис" Height="700" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Background="#7A1414"
+                    HorizontalAlignment="Left" Width="1000">
+            <Image Source="/Images/garage.png" Height="100" Width="200"/>
+            <TextBlock Text="Автосервис Garage" Margin="5" FontSize="66"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="Black"
+                    HorizontalAlignment="Left" 
+                    Width="150" Height="600">
+        </StackPanel>
+        <Frame Grid.Row="1"
+               Name="frmMain"
+               ContentRendered="frmMain_ContentRendered"
+               NavigationUIVisibility="Automatic">
+        </Frame>
+    </Grid>
+</Window>

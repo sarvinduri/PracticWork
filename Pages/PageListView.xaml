@@ -1,0 +1,37 @@
+﻿<Page x:Class="Глазкова_Труфанова.Pages.PageListView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Глазкова_Труфанова.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageListView">
+
+    <Grid>
+        <ListView Name="LstViewReair">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+                        <TextBlock Text="{Binding Mechanic.full_name}"/>
+                        <TextBlock Text="{Binding Driver.full_name}"/>
+                        <TextBlock Text="{Binding date}" Margin="5"/>
+                        <Image Width="150" Height="150" 
+                            Stretch="Fill"
+                               HorizontalAlignment="Left"
+                               Margin="5">
+                            <Image.Source>
+                                <Binding Path="Photo">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>\Resourses\NoD.jpg</ImageSource>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

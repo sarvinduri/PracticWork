@@ -1,0 +1,90 @@
+﻿<Page x:Class="Глазкова_Труфанова.Pages.PageRepair"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Глазкова_Труфанова.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="800"
+      Title="PageRepair">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Grid.Column="1"
+                  Name="dtgRepair"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                Header="ФИО водителя" Width="*"
+                Binding="{Binding Driver.full_name}"/>
+                <DataGridTextColumn
+                Header="ФИО механика" Width="*"
+                Binding="{Binding Mechanic.full_name}"/>
+                <DataGridTextColumn
+                Header="Цена" Width="*"
+                Binding="{Binding price}"/>
+                <DataGridTemplateColumn Header="Редактировать"  Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="BtnEdit" Background="#7A1414"
+                    Content="Редактирование" FontSize="20"
+                    Margin="5"
+                    Click="BtnEdit_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="0"
+                    Orientation="Vertical" Background="Black">
+            <TextBlock Text="Цена" Margin="5" Height="30" FontSize="25" Foreground="White"/>
+            <ComboBox Name="CmbPrice" Margin="5"
+                      SelectionChanged="CmbPrice_SelectionChanged"/>
+            <TextBlock Text="Фамилии Водителей" Margin="5" Height="30" FontSize="20" Foreground="White"/>
+            <ComboBox Name="CmbFullName" Margin="5"
+                      SelectionChanged="CmbFullName_SelectionChanged"/>
+            <TextBlock Text="Сбросить данные фильтра"  Margin="5" Height="30" FontSize="15" Foreground="White"/>
+            <Button Name="BtnResetFiltr" FontSize="20" Background="#7A1414"
+                    Content="Сбросить" 
+                    Margin="5" Click="BtnResetFiltr_Click"/>
+            <TextBlock Text="Добавить данные в таблицу"  Margin="5" Height="30" FontSize="14" Foreground="White"/>
+            <Button Name="BtnAdd" Background="#7A1414"
+                    Content="Добавление" FontSize="20"
+                    Margin="5"
+                    Click="BtnAdd_Click"/>
+            <TextBlock Text="Редактировать данные"  Margin="5" Height="30" FontSize="14" Foreground="White"/>
+            <Button Name="BtnEdit" Background="#7A1414"
+                    Content="Редактирование" FontSize="20"
+                    Margin="5"
+                    Click="BtnEdit_Click"/>
+            <TextBlock Text="Удалить данные из таблицы"  Margin="5" Height="30" FontSize="14" Foreground="White"/>
+            <Button Name="BtnClean" Background="#7A1414"
+                    Content="Удаление" FontSize="20"
+                    Margin="5"
+                    Click="BtnClean_Click"/>
+            <Button Name="BtnGoListView" Background="#7A1414"
+                    Content="Переход на ListView" FontSize="20"
+                    Margin="5"
+                    Click="BtnGoListView_Click"/>
+            <Button Name="BtnExcel" Background="#7A1414"
+                    Content="Вывод в Excel" FontSize="20"
+                    Margin="5"
+                    Click="BtnExcel_Click"/>
+            <Button Name="BtnWord" Background="#7A1414"
+                    Content="Вывод в Word" FontSize="20"
+                    Margin="5"
+                    Click="BtnWord_Click"/>
+            <Button Name="BtnChart" Background="#7A1414"
+                    Content="Диаграмма" FontSize="20"
+                    Margin="5"
+                    Click="BtnChart_Click"/>
+            <Button Name="BtnControl" Background="#7A1414"
+                    Content="Таблица контроля водителя" FontSize="20"
+                    Margin="5"
+                    Click="BtnControl_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
